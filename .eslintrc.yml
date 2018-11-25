@@ -1,0 +1,7 @@
+extends: airbnb-base
+env:
+  jest: true
+rules:
+  "max-len": [1, 80, 2]
+globals:
+  request: true
