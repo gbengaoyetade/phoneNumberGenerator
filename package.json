@@ -3,16 +3,25 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "jest": {
+    "verbose": true,
+    "collectCoverageFrom": [
+      "src/**/*.(js)"
+    ],
+    "setupTestFrameworkScriptFile": "./src/lib/jestSetup.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/server"
+    "test": "export NODE_ENV=test && ./node_modules/.bin/jest",
+    "test:cover": "yarn test --coverage",
+    "start": "nodemon src/bin/www"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
-    "jest": "21.2.1"
+    "jest": "21.2.1",
+    "supertest": "^3.3.0"
   },
   "devDependencies": {
     "eslint": "^5.9.0",
