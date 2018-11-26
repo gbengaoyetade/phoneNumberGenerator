@@ -1,7 +1,7 @@
 const fs = require('fs');
 const {
   generateNumbers,
-  compareNumbers,
+  formatGetNumbersResponse,
   MAX_COUNT,
   FILE_PATH,
 } = require('../lib');
@@ -21,32 +21,25 @@ class NumbersController {
 
   static async getNumbers(req, res) {
     const { statsOnly } = req.query;
-    fs.readFile(FILE_PATH, 'utf8', (err, data) => {
-      if (err) {
-        res
-          .status(500)
-          .send({ error: 'There was an error reading database file' });
-      } else {
-        const numbersArray = data.split(',').sort(compareNumbers);
-        let length;
-        // This conditional was added for when the file is empty
-        if (numbersArray[0] === '') {
-          length = 0;
-        } else {
-          length = numbersArray.length; // eslint-disable-line
-        }
-        const responseObject = {
-          length,
-          max: numbersArray[length - 1] || '',
-          min: numbersArray[0],
-          numbers: numbersArray,
-        };
-        if (statsOnly) {
-          delete responseObject.numbers;
-        }
-        res.send(responseObject);
-      }
+    const readStream = fs.createReadStream(FILE_PATH);
+    let phoneNumbers = '';
+    readStream.on('error', () => {
+      res
+        .status(500)
+        .send({ error: 'There was an error reading database file' });
     });
+    readStream
+      .on('data', (chunk) => {
+        phoneNumbers += chunk;
+      })
+      .on('end', () => {
+        const numbersArray = phoneNumbers.split(',').sort();
+        const responseObject = formatGetNumbersResponse(
+          numbersArray,
+          statsOnly,
+        );
+        res.send(responseObject);
+      });
   }
 }
 module.exports = NumbersController;
