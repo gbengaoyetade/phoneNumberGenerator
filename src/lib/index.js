@@ -23,15 +23,29 @@ const generateNumbers = (count) => {
   return numbers;
 };
 
-const compareNumbers = (firstNumber, secondNumber) => {
-  const compare = Number(firstNumber) - Number(secondNumber);
-  return compare;
+const formatGetNumbersResponse = (numbersArray, statsOnly) => {
+  let { length } = numbersArray;
+  // This conditional was added for when the file is empty
+  if (numbersArray[0] === '') {
+    length = 0;
+  } else {
+    length = numbersArray.length; // eslint-disable-line
+  }
+  const responseObject = {
+    length,
+    max: numbersArray[length - 1] || '',
+    min: numbersArray[0],
+    numbers: numbersArray,
+  };
+  if (statsOnly) {
+    delete responseObject.numbers;
+  }
+  return responseObject;
 };
-
 module.exports = {
   generateNumbers,
   writeToFile,
-  compareNumbers,
+  formatGetNumbersResponse,
   FILE_PATH,
   MAX_COUNT,
 };
