@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match snapshot 1`] = `
+<div>
+  <h5>
+    Phone number generator
+  </h5>
+  <p>
+    Total: 
+    0
+  </p>
+  <p>
+    Min Number: 
+  </p>
+  <p>
+    Max Number: 
+  </p>
+</div>
+`;
