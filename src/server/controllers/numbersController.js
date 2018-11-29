@@ -33,7 +33,10 @@ class NumbersController {
         phoneNumbers += chunk;
       })
       .on('end', () => {
-        const numbersArray = phoneNumbers.split(',').sort();
+        // remove trailing comma in the string so split does not
+        // return an empty value when called
+        const modifiedNumbers = phoneNumbers.slice(0, -1);
+        const numbersArray = modifiedNumbers.split(',').sort();
         const responseObject = formatGetNumbersResponse(
           numbersArray,
           statsOnly,

@@ -19,6 +19,8 @@ const generateNumbers = (count) => {
     numbers.push(`0${tenDigits}`);
     itr += 1;
   }
+  // Add a trailing comma so numbers don't get mumbled up when appending to file
+  numbers[count - 1] = `${numbers[count - 1]},`;
   writeToFile(numbers);
   return numbers;
 };
@@ -32,7 +34,7 @@ const formatGetNumbersResponse = (numbersArray, statsOnly) => {
     length = numbersArray.length; // eslint-disable-line
   }
   const responseObject = {
-    length,
+    total: length,
     max: numbersArray[length - 1] || '',
     min: numbersArray[0],
     numbers: numbersArray,
