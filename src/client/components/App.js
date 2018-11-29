@@ -70,24 +70,29 @@ class App extends Component {
     </form>
   );
 
-  renderTable = numbers => (
-    <table className="card">
-      <thead>
-        <tr className="text-bold">
-          <th>SN</th>
-          <th>Number</th>
-        </tr>
-      </thead>
-      <tbody>
-        {numbers.map((number, index) => (
-          <tr key={index + 1}>
-            <td>{index + 1}</td>
-            <td>{number}</td>
+  renderTable = (numbers) => {
+    if (!numbers.length) {
+      return <p className="center">No numbers to display</p>;
+    }
+    return (
+      <table className="card">
+        <thead>
+          <tr className="text-bold">
+            <th>SN</th>
+            <th>Number</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
-  );
+        </thead>
+        <tbody>
+          {numbers.map((number, index) => (
+            <tr key={index + 1}>
+              <td>{index + 1}</td>
+              <td>{number}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    );
+  };
 
   renderLoader = () => <p className="center">Fetching numbers...</p>;
 
