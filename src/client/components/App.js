@@ -91,10 +91,25 @@ class App extends Component {
 
   renderLoader = () => <p className="center">Fetching numbers...</p>;
 
+  renderStats = () => {
+    const { min, max, total } = this.state;
+    return (
+      <ul className="card">
+        <li>
+          <span className="text-bold">Total Numbers:</span> {total}
+        </li>
+        <li>
+          <span className="text-bold">Min Number:</span> {min}
+        </li>
+        <li>
+          <span className="text-bold">Max Number:</span> {max}
+        </li>
+      </ul>
+    );
+  };
+
   render() {
-    const {
-      max, min, total, numbers, numbersFetched,
-    } = this.state;
+    const { numbers, numbersFetched } = this.state;
     return (
       <div className="wrapper">
         <div className="side-bar">{this.renderForm()}</div>
@@ -104,17 +119,7 @@ class App extends Component {
         </div>
         <div className="stats">
           <h2>Stats</h2>
-          <ul className="card">
-            <li>
-              <span className="text-bold">Total Numbers:</span> {total}
-            </li>
-            <li>
-              <span className="text-bold">Min Number:</span> {min}
-            </li>
-            <li>
-              <span className="text-bold">Max Number:</span> {max}
-            </li>
-          </ul>
+          {this.renderStats()}
         </div>
         <div className="clear" />
       </div>
