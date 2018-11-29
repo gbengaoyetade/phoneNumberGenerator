@@ -30,12 +30,13 @@ const formatGetNumbersResponse = (numbersArray, statsOnly) => {
   // This conditional was added for when the file is empty
   if (numbersArray[0] === '') {
     length = 0;
+    numbersArray.pop();
   } else {
     length = numbersArray.length; // eslint-disable-line
   }
   const responseObject = {
     total: length,
-    max: numbersArray[length - 1] || '',
+    max: numbersArray[length - 1],
     min: numbersArray[0],
     numbers: numbersArray,
   };
