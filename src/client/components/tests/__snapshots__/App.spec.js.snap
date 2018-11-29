@@ -1,19 +1,80 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App should match snapshot 1`] = `
-<div>
-  <h5>
-    Phone number generator
-  </h5>
-  <p>
-    Total: 
-    0
-  </p>
-  <p>
-    Min Number: 
-  </p>
-  <p>
-    Max Number: 
-  </p>
-</div>
+<App>
+  <div
+    className="wrapper"
+  >
+    <div
+      className="side-bar"
+    >
+      <form
+        className="form"
+        onSubmit={[Function]}
+      >
+        <input
+          className="input"
+          onChange={[Function]}
+          required={true}
+          type="number"
+        />
+        <input
+          className="btn"
+          type="submit"
+          value="Generate Numbers"
+        />
+      </form>
+    </div>
+    <div
+      className="main-section"
+    >
+      <h2>
+        Phone Numbers
+      </h2>
+      <p
+        className="center"
+      >
+        Fetching numbers...
+      </p>
+    </div>
+    <div
+      className="stats"
+    >
+      <h2>
+        Stats
+      </h2>
+      <ul
+        className="card"
+      >
+        <li>
+          <span
+            className="text-bold"
+          >
+            Total Numbers:
+          </span>
+           
+        </li>
+        <li>
+          <span
+            className="text-bold"
+          >
+            Min Number:
+          </span>
+           
+        </li>
+        <li>
+          <span
+            className="text-bold"
+          >
+            Max Number:
+          </span>
+           
+        </li>
+      </ul>
+    </div>
+    <div
+      className="clear"
+    />
+  </div>
+</App>
 `;

@@ -1,19 +1,20 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
+require('babel-polyfill');
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: './index.html',
 });
-
+const appPath = path.join(__dirname, 'src/client');
 module.exports = {
-  context: path.join(__dirname, 'src/client'),
-  entry: path.join(__dirname, 'src/client'),
+  context: appPath,
+  entry: ['babel-polyfill', appPath],
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        include: [path.join(__dirname, 'src/client')],
+        include: [appPath],
         use: {
           loader: 'babel-loader',
         },

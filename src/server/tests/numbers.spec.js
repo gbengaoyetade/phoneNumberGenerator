@@ -38,7 +38,7 @@ describe('NumbersController', () => {
     it('should return numbers and statistics', (done) => {
       request.get('/api/v1/numbers').end((err, res) => {
         expect(res.statusCode).toBe(200);
-        expect(res.body.length).toBe(1000);
+        expect(res.body.total).toBe(1000);
         expect(res.body.max).toBeTruthy();
         expect(res.body.min).toBeTruthy();
         expect(res.body).toHaveProperty('numbers');
@@ -49,7 +49,7 @@ describe('NumbersController', () => {
     it('should return stats only when statsOnly is set in query', (done) => {
       request.get('/api/v1/numbers?statsOnly=yes').end((err, res) => {
         expect(res.statusCode).toBe(200);
-        expect(res.body.length).toBe(1000);
+        expect(res.body.total).toBe(1000);
         expect(res.body.max).toBeTruthy();
         expect(res.body.min).toBeTruthy();
         expect(res.body.numbers).toBeFalsy();
@@ -62,7 +62,7 @@ describe('NumbersController', () => {
         if (!error) {
           request.get('/api/v1/numbers?').end((err, res) => {
             expect(res.statusCode).toBe(200);
-            expect(res.body.length).toBe(0);
+            expect(res.body.total).toBe(0);
             done();
           });
         } else {
