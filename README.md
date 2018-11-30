@@ -23,6 +23,7 @@ Then install packages
 ```
 $ yarn install
 ```
+Create an empty `database.txt` file
 
 Start application
 
