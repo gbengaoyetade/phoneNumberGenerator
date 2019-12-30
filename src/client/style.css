@@ -1,104 +1,104 @@
 body {
-	color: rgb(61, 61, 61);
-	background-color: #fff;
-	font-size: 18px;
-	color: rgb(133, 133, 133);
+  color: rgb(61, 61, 61);
+  background-color: #fff;
+  font-size: 18px;
+  color: rgb(133, 133, 133);
 }
 table {
-	border-spacing: 2px;
-	border-radius: 10px 10px 0 0;
-	border-collapse: collapse;
-	width: 60%;
-	margin: 10px auto;
+  border-spacing: 2px;
+  border-radius: 10px 10px 0 0;
+  border-collapse: collapse;
+  width: 60%;
+  margin: 10px auto;
 }
 h2 {
-	width: 100%;
-	text-align: center;
+  width: 100%;
+  text-align: center;
 }
 th {
-	text-align: center;
-	padding: 19px 20px;
-	border-bottom: 1px solid #eee;
+  text-align: center;
+  padding: 19px 20px;
+  border-bottom: 1px solid #eee;
 }
 td {
-	text-align: center;
-	font-size: 22px;
-	border-bottom: 1px solid rgb(240, 240, 240);
-	padding: 10px;
+  text-align: center;
+  font-size: 22px;
+  border-bottom: 1px solid rgb(240, 240, 240);
+  padding: 10px;
 }
 ul {
-	margin: 0;
-	padding: 10px;
-	list-style-type: none;
-	width: 100%;
-	text-align: left;
+  margin: 0;
+  padding: 10px;
+  list-style-type: none;
+  width: 100%;
+  text-align: left;
 }
 .card {
-	border-color: grey;
-	box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  border-color: grey;
+  box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
 }
 .form {
-	display: flex;
+  display: flex;
 }
 .btn {
-	background-color: rgb(79, 122, 241);
-	color: #fff;
-	box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-	border-radius: 8px;
-	padding: 5px;
-	height: 40px;
+  background-color: rgb(79, 122, 241);
+  color: #fff;
+  box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 5px;
+  height: 40px;
 }
 
 .input {
-	height: 37px;
-	border-radius: 8px;
-	border: 1px solid #eee;
-	margin-right: 4px;
-	box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-	font-size: 15px;
-	width: 33%;
-	text-align: center;
+  height: 37px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  margin-right: 4px;
+  box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  font-size: 15px;
+  width: 33%;
+  text-align: center;
 }
 .form {
-	display: flex;
-	justify-content: center;
-	position: relative;
-	top: 10%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 10%;
 }
 .wrapper {
-	display: flex;
+  display: flex;
 }
 .side-bar {
-	width: 20%;
-	height: 100vh;
+  width: 20%;
+  height: 100vh;
 }
 .main-section {
-	width: 60%;
-	border-left: 1px solid #aaa;
-	padding-left: 30px;
+  width: 60%;
+  border-left: 1px solid #aaa;
+  padding-left: 30px;
 }
 .clear {
-	clear: both;
+  clear: both;
 }
 .text-bold {
-	color: rgb(79, 122, 241);
-	padding-right: 20px;
+  color: rgb(79, 122, 241);
+  padding-right: 20px;
 }
 .stats {
-	width: 20%;
-	margin-right: 5%;
+  width: 20%;
+  margin-right: 5%;
 }
 .center {
-	text-align: center;
+  text-align: center;
 }
 
 .card li {
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .number {
-	display: inline-block;
-	text-align: left;
-	width: 40%;
+  display: inline-block;
+  text-align: left;
+  width: 40%;
 }
