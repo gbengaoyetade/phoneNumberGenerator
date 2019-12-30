@@ -28,9 +28,7 @@ class App extends Component {
   }
 
   updateAppState = (data) => {
-    const {
-      total, min, max, numbers,
-    } = data;
+    const { total, min, max, numbers } = data;
     this.setState({
       total,
       min,
@@ -101,13 +99,16 @@ class App extends Component {
     return (
       <ul className="card">
         <li>
-          <span className="text-bold">Total Numbers:</span> {total}
+          <span className="text-bold">Total Numbers:</span>
+          <span className="number total">{total}</span>
         </li>
         <li>
-          <span className="text-bold">Min Number:</span> {min}
+          <span className="text-bold">Min Number:</span>
+          <span className="number min">{min}</span>
         </li>
         <li>
-          <span className="text-bold">Max Number:</span> {max}
+          <span className="text-bold">Max Number:</span>
+          <span className="number max">{max}</span>
         </li>
       </ul>
     );

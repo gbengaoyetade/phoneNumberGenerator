@@ -91,3 +91,14 @@ ul {
 .center {
   text-align: center;
 }
+
+.card li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.number {
+  display: inline-block;
+  text-align: left;
+  width: 40%;
+}

@@ -30,6 +30,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "prettier": {
+    "singleQuote": true,
+    "arrowParens": "always",
+    "trailingComma": "all"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "babel-preset-stage-0": "^6.24.1",
@@ -42,7 +47,8 @@
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "supertest": "^3.3.0"
+    "supertest": "^3.3.0",
+    "testcafe": "^1.7.1"
   },
   "devDependencies": {
     "@babel/preset-stage-0": "^7.0.0",
