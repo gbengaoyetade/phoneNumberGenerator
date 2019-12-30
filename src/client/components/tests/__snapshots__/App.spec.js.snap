@@ -52,7 +52,9 @@ exports[`App should match snapshot 1`] = `
           >
             Total Numbers:
           </span>
-           
+          <span
+            className="number total"
+          />
         </li>
         <li>
           <span
@@ -60,7 +62,9 @@ exports[`App should match snapshot 1`] = `
           >
             Min Number:
           </span>
-           
+          <span
+            className="number min"
+          />
         </li>
         <li>
           <span
@@ -68,7 +72,9 @@ exports[`App should match snapshot 1`] = `
           >
             Max Number:
           </span>
-           
+          <span
+            className="number max"
+          />
         </li>
       </ul>
     </div>
